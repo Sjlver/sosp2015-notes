@@ -20,12 +20,18 @@ Wisdom:
 
 "If you want security, you must be prepared for inconvenience" (some US general)
 
-We know how to secure something simple, very well
-Protect complecity by isolation an sanitization
-We're also good at staging security theatre :-)
 
-We're not good at making something complex secure
-making things secure if they are not isolated, or change.
+Where are we now?
+-----------------
+
+We're good at:
+- securing something simple
+- protecting complexity by isolation an sanitization
+- staging security theatre :-)
+
+We're less good at:
+- making something complex secure
+- making things secure if they are not isolated, or if they change.
 
 Themes:
 
@@ -34,7 +40,7 @@ Themes:
 - Principals: People, machines, programs
 - Groups and roles: make policy manageable
 
-Oppositions:
+Oppositions: winners vs losers
 
 - Convenience (wins) vs Security (loses)
 - Sharing vs Isolation
@@ -144,22 +150,24 @@ serious problem, because every system needs its own config.
 
 
 What has worked (i.e., gotten wide adoption) and what hasn't
------
+------------------------------------------------------------
 
-VMs
-SSL
-Passwords
-Safe languages
-Firewalls
-Process  - SDL
+Things that worked:
+- VMs
+- SSL
+- Passwords
+- Safe languages
+- Firewalls
 
 
-Secure systems (we don't have those)
-Capabilities
-Metrics for security
-MLS/Orange book
-User education
-Intrusion detection
+Things that did not work:
+
+- Secure systems (we still don't have those)
+- Capabilities
+- Metrics for security
+- MLS/Orange book
+- User education
+- Intrusion detection
 
 
 Why don't we have "real" security

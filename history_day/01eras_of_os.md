@@ -19,7 +19,7 @@ Development of Principles
 
 Laws (statements that are always true). For example:
 
-- c(t) = max( a(t), s(t) + 1)
+- c(t) = max( a(t), s(t) + 1 )
   Semaphore law
 - M = (spacetime) * (throughput)
   Memory management
@@ -31,22 +31,21 @@ Statements of design wisdom:
 - Information hiding
 - Levels of abstraction
 
-Cosmic = timeless + spaceless (Jim Gray). A guideline for deciding whether
-something is a law. Laws should be "cosmic", true at all times and in all
-places. Locality is a cosmic principle. Virtual memory is a great idea, but is
-not a principle.
+For something to be a law, it should be *cosmic*: Cosmic = timeless + spaceless
+(Jim Gray). Laws should be true at all times and in all places. Locality is a
+cosmic principle. Virtual memory is a great idea, but is not a principle.
 
 OS principles got into computer science:
 
 - Interactivity
 - Naming / mapping
 - Concurrent processes
-- Protection / Sharing
+- Protection / sharing
 - Locality
 - Virtualization
 - System languages
 
-=> Survey of principles at <http://greatprinciples.org>
+=> cf. Survey of principles at <http://greatprinciples.org>
 
 In 1971, Operating Systems became the first non-math core course at MIT.
 
@@ -60,9 +59,9 @@ thrashing. The question was, could virtual memory effectively be done?
 Thrashing was a big problem. Nobody understood why it happened, or when it would
 happen.
 
-Then people made "reference maps" (what area of virtual memory is accessed at
-what time?). This lead to the concept of working set. These are stable over some
-time, and then transition to other locality sets.
+Then people made "reference maps" (Plots showing what area of virtual memory is
+accessed at what time). This lead to the concept of locality sets. These are
+stable over some time, and then transition to other locality sets.
 
 Research results:
 
@@ -72,15 +71,15 @@ Research results:
 
 Locality principle:
 
-- empirically, all computations display locality
-- there are theoretical reasons in algorithm design for this
-- it makes sense to harness locality (caches, ...)
+- Empirically, all computations display locality.
+- There are theoretical reasons in algorithm design for this.
+- It makes sense to harness locality (caches, ...)
 
 Patterns learned from OS research:
 
 - There is never certainty.
-- Occasionally, an insight charts a new direction
-- Researchers are always searching what works
+- Occasionally, an insight charts a new direction.
+- Researchers are always searching what works.
 - Theory always follows practice. People observe things, and then try to
   understand it better.
 
@@ -92,5 +91,5 @@ Challenges ahead
   knowledge.
 - Networks have become a space of social power, actions and identities
 - Security and privacy in the Internet of things
-- Size, complexity and size of systems.
+- Size, complexity and size of systems
 
