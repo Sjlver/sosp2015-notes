@@ -10,18 +10,18 @@ History
 In the early 60s, IBM had four incompatible computer lines. Then, the IBM 360
 ISA came and hid the architectural differences.
 
-Control path vs datapath. Processor designs split the two. The data path had a
-different width than the control path.
+Control path vs data path. Processor designs separated the two. The data path
+had a different width than the control path.
 
 Moore's law allowed more complex ISAs (VAX in the 70s)
 
-Intel i432: goal was to invent the next great ISA, because it would probably
-stay with them forever. But the design was late.
+Intel iAPX 432: In 1975, Intel's goal was to invent the next great ISA, because
+Intel would probably be stuck with it forever. But the design was late.
 
-So, in 10 weeks Gordon Moore (moore's law) designed the 8086. Intel used it
+So, in 10 weeks Gordon Moore (Moore's law) designed the 8086. Intel used it
 because it was on time (and Motorola 68000 was late).
 
-Analyzign microcoded machines: John Cocke did an experiments where they only
+Analyzing microcoded machines: John Cocke did an experiments where they only
 used simple load/store instructions (and ignored all others). Result: software
 ran faster!
 
@@ -41,7 +41,7 @@ VLIW: very long instruction word: multiple operations in one instruction.
 Compiler had all the responsibilities. It would e.g., unroll loops so that it
 could schedule more instructions and work around the latencies.
 
-Intel Itanium embraced that, build EPIC (explicitly parallel instruction
+Intel Itanium embraced that, built EPIC (explicitly parallel instruction
 computing). Unfortunately, it was an epic failure... Unpredictable branches,
 unpredictable cache misses were hard to compile for. The approach was supposed
 to be terrific, but the compilers were just too hard to write.
@@ -61,7 +61,7 @@ Cluster advantages: error isolation, easier to repair because machines are
 independent, easier to scale, cheaper.
 
 => Inktomi (and then Amazon, Google, ...) started to rely on clusters of
-commodity computers?
+commodity computers.
 
 Future
 ------
@@ -84,8 +84,8 @@ take advantage of this.
 
 Today, agreement that RISC is the right instruction set.
 
-We should have an open ISA!! There is no good technical reason today for this...
-There aren't many business reasons for it as well.
+We should have an open ISA!! There is no good technical reason today against
+this... There aren't many business reasons against it as well.
 
 Today, companies can offer designs without offering chips (like ARM). Moore's
 law is ending => more need for domain-specific stuff.
@@ -100,7 +100,7 @@ Ideas:
 - optional extensions
   - multiply/divide
   - compressed instructions
-- reserve opcodes for custom extensions
+- reserved opcodes for custom extensions
 
 Exciting today: it is cheap to build hardware! For 250$, you can get a Zed FPGA
 => working computer with full software stack.

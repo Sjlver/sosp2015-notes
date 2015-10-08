@@ -9,7 +9,7 @@ Early issues were pragmatic and "mechanical".
 - How to structure the code that implemented the protocols
 - Performance
 
-Later issues were more fundamental
+Later issues were more fundamental.
 - Security
 
 
@@ -22,21 +22,22 @@ Networking is different from other I/O:
 - the Internet connected heterogeneous machines (on Multics, the machine had
   9-bit bytes, but the IP protocol had 8-bit fields...)
 - unpredictable arrival and transmission types
-- packets must be processed to demultiplex them
+- packets must be processed to demultiplex them, and demultiplexed before
+  further processing... it's a mess :)
 
 => because of all these reasons, it was hard to rip networking code out of the
    OS.
 
 In 1986, there was a deep confusion as to how to move from a protocol spec to
-its implementation. Why was it so hard?
+its implementation. Why was it so hard? Was the difficulty in:
 
-- Implement the state machine?
+- Implementing the state machine?
 - Marshalling the package fields?
 - Dealing with errors?
   They were so inexplicable...
 - Processing 32-bit numbers on a 36-bit system?
-  TCP sequence numbers could wrap around... and yet had to be processed on a
-  16-bit machine :)
+  TCP sequence numbers could wrap around... this had to be simulated on 16-bit
+  machines :)
 - Copying the data?
 - Dealing with congestion control?
 - Dispatching the packet to the right connection?
@@ -59,12 +60,12 @@ Performance: people didn't know the relative cost of events:
 - copying data around
 - dispatching a packet
 
-People started by thinking that the protocol processing was the expensive step.
+People initially thought that the protocol processing was the expensive step.
 Turns out, processing the header was the cheapest of all these steps...
 
 ### Example: TRIPOS
 
-Tripos was a microkernel system where networking code was very elegant, split
+TRIPOS was a microkernel system where networking code was very elegant, split
 over three processes.
 
 However, 54 process wakeups were needed to exchange a single character (for
@@ -73,16 +74,17 @@ faster.
 
 Some papers came out of this:
 
-- The structuring of systems using upcalls
-- Hashed and hierarchical timing wheels (timers that wouldn't take longer to set
-  than the time it took to send a packet)
-- An analysis of TCP processing overhead (Counted assembly instructions for
-  various operations. For example, receiving an ACK turned out to be more
-  expensive than receiving the data...)
+- The structuring of systems using upcalls (1985)
+- Hashed and Hierarchical Timing Wheels: Data Structures for the Efficient
+  Implementation of a Timer Facility (1987)
+  Timers that took constant time to set, instead of O(number of timers).
+- An analysis of TCP processing overhead (1989)
+  Counted assembly instructions for various operations. For example, receiving
+  an ACK turned out to be more expensive than receiving the data...
 
 Some insights, too:
 
-- "Damn, speed of light is not on Moore's law curve"
+- "Damn, speed of light is not on Moore's law curve."
 
 ### The recurring structural issue
 

@@ -7,7 +7,7 @@ Sunday, 15:30
 Multics had this vision of "utility computing". Give people computing power when
 they need it.
 
-After a while, PCs became cheap so that everybody could have one.
+A few years later, PCs became cheap so that everybody could have one.
 
 Over time, we've gone back to a centralized notion (shows pictures of Google
 data centers). There are high-speed networks connecting many small components to
@@ -15,32 +15,33 @@ a bigger unit.
 
 ## How did we get here?
 
-In the nineties, distributed systems were modest-scale (5 machines...)
+In the nineties, distributed systems were modest-scale (5 machines or so).
 
-High-performance computing had a focus on performance but not on
-fault-tolerance.
+High-performance computing was one user of distributed systems. Focused on
+performance, but not on fault-tolerance.
 
 Transactional systems and databases had a focus on fault-tolerance but less on
 performance.
 
-What caused the need for very large-scale systems?
+What caused the need for very large-scale systems? The web was the first very
+large data set. It grew to millions of pages. These needed indexing, searching,
+...
 
-- The web was the first very large data set.
-  It grew to millions of pages. These needed indexing, searching, ...
-
-One of the early projects was Berkeley NOW: computers get cheaper; can connect
-them with a fast network to get really high computing power.
+One of the early projects was Berkeley NOW: Network of Workstations.
+Its authors recognized that computers get cheaper; can connect them with a fast
+network to get really high computing power.
 
 Jeff Dean started at DEC WRL (who built Altavista). Ultimately, he wanted to
 join a small company, so he went to Google in 1999 :)
 
-Early Google tenet: commodity PCs gave high perf per dollar. Commodity
-components were even better. So Google built these racks out of Lego and cork :)
+Early Google tenet: commodity PCs gave high performance per dollar. Commodity
+components were even better. So Google built custom racks out of Lego and cork :)
 
 A typical cluster sees, in its first year
 
 - 1 rewiring
 - 20 rack failures
+- 1000s of disk failures
 - ...
 
 => Reliability must come from software, not hardware.
@@ -62,12 +63,12 @@ reasonably well).
 The master managers metadata, but apart from that the clients communicate
 directly with the disk machines.
 
-Chunks of 64MB, each replicated three-way. => Can just replace failed disks, and
-the system will self-repair.
+Data is stored in chunks of 64MB, each replicated three-way. => Can just replace
+failed disks, and the system will self-repair.
 
 ### 2. Process data in parallel
 
-Once you can store so much data, you want to be parallel computation on it.
+Once you can store so much data, you want to do parallel computation on it.
 
 One important building block: the scheduler.
 
@@ -76,13 +77,14 @@ Multiple approaches here:
 - task = VM
 - task = Container (a bit more lightweight, at the process level)
 
-Scheduler needs to place these tasks on physical machines, while satisfying task
-requirements and handling machine failures.
+The scheduler needs to place these tasks on physical machines, while satisfying
+task requirements and handling machine failures.
 
 Many systems:
-- Borg
+- Google's Borg
 - Apache Mesos
 - Kubernetes
+- ...
 
 Tension between multiplexing resources and performance isolation. Sharing leads
 to unpredictable performance. In particular, it's very important to control tail

@@ -44,14 +44,14 @@ through predefined operations.
 
 There were two system models for accessing resources:
 
-- Resource process model: each resource controlled by a process, need IPC to
+- Resource process model: each resource is controlled by a process, need IPC to
   access.
 - User process model: processes use abstract data types to access resources
   safely. The code to access resources runs in the user process (might do IPC
   under the cover).
 
-These models are duals (Lauer and Needham, 1978). For example, a port
-corresponds to an operation.
+These models are duals (Lauer and Needham, 1978). For example, a port in the
+resource process model corresponds to an operation in the user process model.
 
 ### Programming issues: multiplexing
 
@@ -77,8 +77,8 @@ Many programming languages were actually developed in the OS community:
 
 Interestingly, these papers have a syntax in BNF, but then explain the semantics
 rather informally, with many examples. In contrast, the programming language
-community cares a lot about semantics, but doesn't really give an
-English-language description of what a programming language does :)
+community cares a lot about semantics and typing equations, but doesn't really
+give an English-language description of what a programming language does :)
 
 
 Distributed Systems
@@ -90,17 +90,16 @@ How to structure this? Clients and servers? Distributed heap memory?
 
 For distributed systems, communication is required. But it's hard.
 
-IPC paper (B&N, 1984): Construction of communicating programs was a difficult
-task, undertaken only by members of a select group of communication experts.
+Implementing Remote Procedure Calls (Birrell and Nelson, 1984): Construction of
+communicating programs was a difficult task, undertaken only by members of a
+select group of communication experts.
 
 Why?
-- Link communication requests with replies
-- Format of messages
-  Like, different computers might not represent data structures the same way.
-- Get the data
+- Need to link communication requests with replies
+- Formatting of messages can be tricky
+  E.g., different computers might not represent data structures the same way.
 
-Remote procedure calls (Birrel and B.J. Nelson, 1983). Local and remote calls
-look the same.
+Using RPCs, local and remote calls look the same.
 
 RPCs are cool and have been extended in various ways (promises, caching,
 distributed lookup, ...) Have some problems with dropped packages (exactly once

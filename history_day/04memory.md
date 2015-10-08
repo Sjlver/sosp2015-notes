@@ -1,5 +1,5 @@
-Memory of File Systems
-======================
+Memory and File Systems
+=========-=============
 
 Speaker: Mahadev Satyanarayanan
 Sunday, 11:00
@@ -16,8 +16,8 @@ Question: what are the four fundamental forces in OS?
 
 ## 1. The quest for scale
 
-Slide: memory prices in $ per megabyte (Exponential decrease pretty much from
-1960 to 2010. Thirteen orders of magnitude reduction.)
+Slide: memory prices in $ per megabyte. Shows exponential decrease pretty much
+from 1960 to 2010. Thirteen orders of magnitude reduction.
 
 Naming and addressability challenges:
 
@@ -95,13 +95,13 @@ How to cope with failures?
 
 How to cope with human errors?
 
-- Apple time machine, elephant file system, even the "Trash" and "Undo"
-  mechanisms.
+- Apple time machine
+- elephant file system
+- even the "Trash" and "Undo" mechanisms in our operating systems.
 
-Is the file system dead?
-
-It appears true on a higher level, e.g., Android users never see files anymore.
+Outlook: Is the file system dead? It appears so on a higher level, e.g., Android
+users never see files anymore.
 
 However, file systems are hierarchical not because we don't know any better, but
-because they match the limits of our cognition. => "The architecture of
-complexity".
+because they match the limits of our cognition. Cf. Herbert A. Simon: "The
+architecture of complexity".

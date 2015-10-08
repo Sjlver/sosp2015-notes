@@ -1,5 +1,5 @@
-Eras of Operating Systems
-=========================
+Perspectives on OS Foundations
+==============================
 
 Speaker: Peter Denning
 Sunday, 09:00
@@ -35,7 +35,7 @@ For something to be a law, it should be *cosmic*: Cosmic = timeless + spaceless
 (Jim Gray). Laws should be true at all times and in all places. Locality is a
 cosmic principle. Virtual memory is a great idea, but is not a principle.
 
-OS principles got into computer science:
+Some OS principles got into computer science:
 
 - Interactivity
 - Naming / mapping
@@ -66,8 +66,8 @@ stable over some time, and then transition to other locality sets.
 Research results:
 
 - The working set equals the locality set most of the time
-- The working set policy (i.e., don't swap out the working set) is nearly
-  optimal in the number of page faults, and prevents thrashing.
+- The working set policy (i.e., don't swap out pages from the working set) is
+  nearly optimal in the number of page faults, and prevents thrashing.
 
 Locality principle:
 
@@ -89,7 +89,7 @@ Challenges ahead
 
 - End of "knowledge era". Computers now do tasks that we thought required
   knowledge.
-- Networks have become a space of social power, actions and identities
+- Networks have become a space of social power, actions and identities.
 - Security and privacy in the Internet of things
-- Size, complexity and size of systems
+- Size and complexity of systems
 

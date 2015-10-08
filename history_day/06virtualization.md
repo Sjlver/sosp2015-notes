@@ -23,8 +23,8 @@ system had multiple "virtual machines" with their own paging strategies.
 
 Evolved into the VM/370. Addressed three needs:
 
-- Time-sharing the computer
-- Running legacy applications and their OSs alongside new applications
+- Time-sharing the computer.
+- Running legacy applications and their OSs alongside new applications.
 - Developing new OS versions using the same time-sharing technology as for
   applications.
 
@@ -42,25 +42,19 @@ instructions need to be privileged (i.e., trap).
 
 Between 1975 and 1995, nothing much happened in the virtualization space...
 
-
-Special effect VMMs
--------------------
+### Special effect VMMs
 
 In the 1990s, hypervisors came back:
 
 - Hypervisor-based fault tolerance (Schneider & Bressoud, 1996)
 - ReVirt: enabling intrusion analysis (Dunlap et al., 2002)
 
-
-Hosted VMMs
------------
+### Hosted VMMs
 
 The idea that a VMM could run on top of another OS. Solved the OS coexistence
 problem. VMware Desktop for Windows came out in 1999.
 
-
-Native/Bare Metal VMMs
-----------------------
+### Native/Bare Metal VMMs
 
 DISCO (1997): hybrid virtualization with binary rewriting and shadowing (VMM
 kept shadow copies of the page table and other data structures) in place of
@@ -92,6 +86,6 @@ Talking points
 --------------
 
 - More mileage from virtualization by modifying OS semantics?
-- What is the TCB, when virtualizing?
+- What is the TCB when virtualizing?
 - Revisit layered abstract machines
 - Prove systems correct by default?
